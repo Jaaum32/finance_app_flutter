@@ -8,4 +8,6 @@ class AppColors {
   static const Color primary = Color(0xFF438883);
   static const List<Color> greenGradient = [secondary, primary];
   static const Color white = Colors.white;
+  static const Color iceWhite = Color(0xFFEEF8F7);
+  static const Color grey = Color(0xFF444444);
 }

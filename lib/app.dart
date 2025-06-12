@@ -1,3 +1,4 @@
+import 'package:finance_app_flutter/features/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -5,15 +6,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        drawer: const Drawer(),
-        floatingActionButton: FloatingActionButton(onPressed: onPressed),
-        body: const Center(
-          child: Text('Home'),
-        ),
-      ),
+    return const MaterialApp(
+      home: OnboardingPage(),
     );
   }
 }
