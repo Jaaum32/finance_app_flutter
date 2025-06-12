@@ -9,7 +9,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(),
         drawer: const Drawer(),
-        floatingActionButton: FloatingActionButton(onPressed: onPressed),
+        floatingActionButton: FloatingActionButton(onPressed: (){}),
         body: const Center(
           child: Text('Home'),
         ),
