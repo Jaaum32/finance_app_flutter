@@ -1,5 +1,8 @@
+import "dart:developer";
+
 import "package:finance_app_flutter/commom/constants/app_colors.dart";
 import "package:finance_app_flutter/commom/constants/app_text_styles.dart";
+import "package:finance_app_flutter/widgets/primary_button.dart";
 import "package:flutter/material.dart";
 
 class OnboardingPage extends StatelessWidget {
@@ -8,6 +11,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.iceWhite,
       body: Align(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,9 +19,7 @@ class OnboardingPage extends StatelessWidget {
           children: [
             const SizedBox(height: 60.0),
             Expanded(
-              flex: 2,
               child: Container(
-                color: AppColors.iceWhite,
                 child: Image.asset('assets/images/man.png'),
               ),
             ),
@@ -29,37 +31,26 @@ class OnboardingPage extends StatelessWidget {
               color: AppColors.secondary,
             )),
             const SizedBox(height: 10.0),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: AppColors.greenGradient,
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent, // remove sombra do ElevatedButton
-                  padding: EdgeInsets.symmetric(horizontal: 150, vertical: 25),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                child: Text(
-                  'Começar',
-                  style: AppTextStyles.smallText.copyWith(
-                    color: AppColors.white,
-                  ),
-                ),
-              ),
+            PrimaryButton(
+              label: 'Começar',
+              onPressed: () {},
             ),
             const SizedBox(height: 10.0),
-            Text('Já tem uma conta? Login', style: AppTextStyles.smallText.copyWith(
-              color: AppColors.grey,
-            )),
+            TextButton(
+              onPressed: () => log('message'),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Já tem uma conta? ', style: AppTextStyles.smallText.copyWith(
+                    color: AppColors.grey,
+                  )),
+                  Text('Login', style: AppTextStyles.smallText.copyWith(
+                    color: AppColors.secondary,
+                  )),
+                ],
+              ),
+            ),
             const SizedBox(height: 40.0),
           ],
         ),
